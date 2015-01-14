@@ -80,22 +80,25 @@ DELETE | Remove a resource
 #### Use Standard HTTP Status Codes
 RESTful APIs should be designed to use standard HTTP status codes. The following status codes are recommended:
 
-###### * 200	The request was successful.
-###### * 201	A resource was successfully created.
-###### * 202	Request has been received. This is only used for asynchronous processing.
-###### * 304	The GET request was conditional and contained an 'If-None-Match' header that was used to determine the current representation has not changed
-###### * 400	The request cannot be understood. This should be used if there are syntax errors and validation errors, (422 is also acceptable for validation errors.)
-###### * 401	Authentication has failed, or the authenticated client is not authorized.
-###### * 404	The requested resource could not be found.
-###### * 405	The method is not supported by the resource.
-###### * 406	Not Acceptable. Return this code when the Accept header (or a custom header as discussed in this strategy) identifies an unsupported format.
-###### * 409	There is a conflict. Return this if the request reflects stale data (that violates an optimistic lock).
-###### * 412	A precondition failed. Used for conditional requests (e.g., when an 'If-Match' header does not match a resource's Etag value).
-###### * 415	Unsupported Media Type. Return when a client requests content in an unsupported format.
-###### * 417	Expectation Failed. Return this if appropriate when supporting 'look-before-you-leap' requests
-###### * 422	'Unprocessable' entity. See note below.
-###### * 429	The rate limit is exceeded
-###### * 500	An undisclosed server error occurred. This is a generic 'fail whale' response.
+HTTP Method  | Description
+------------- | -------------
+200 | The request was successful.
+201 | A resource was successfully created.
+202 | Request has been received. This is only used for asynchronous processing.
+304 | The GET request was conditional and contained an 'If-None-Match' header that was used to determine the current representation has not changed
+400 | The request cannot be understood. This should be used if there are syntax errors and validation errors, (422 is also acceptable for validation errors.)
+401 | Authentication has failed, or the authenticated client is not authorized.
+404 | The requested resource could not be found.
+405 | The method is not supported by the resource.
+406 | Not Acceptable. Return this code when the Accept header (or a custom header as discussed in this strategy) identifies an unsupported format.
+409 | There is a conflict. Return this if the request reflects stale data (that violates an optimistic lock).
+412 | A precondition failed. Used for conditional requests (e.g., when an 'If-Match' header does not match a resource's Etag value).
+415 | Unsupported Media Type. Return when a client requests content in an unsupported format.
+417 | Expectation Failed. Return this if appropriate when supporting 'look-before-you-leap' requests.
+422 | Unprocessable entity. See note below.
+429 | The rate limit is exceeded.
+500 | An undisclosed server error occurred. This is a generic 'fail whale' response.
+
 
 #### Use API versioning
 It is important to version APIs in order to provide clients with stability. Versioning helps you iterate faster and prevents invalid requests from hitting updated endpoints. There are several common approaches used across the industry today for versioning RESTful APIs, the most common being to specify a version:
