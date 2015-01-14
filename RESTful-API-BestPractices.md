@@ -133,7 +133,7 @@ When returning collections, it may be necessary to support paging. There is no s
 
 * Reliable Messaging with REST While REST does not have built-in 'reliable messaging' support, it uses synchronous communication over the HTTP protocol and can thus recover more safely from potentially lost messages.
 
-#### Governance
+# Governance
 Governance is a broad area that may encompass service registries, service repositories, schema catalogs, server configurations, service management (consumption, usage patterns, etc.), and even development processes.
 
 Service repositories are used to centrally store information about the services that are present in your organization's service inventory whereas service registries are often used at runtime to help with problems like endpoint resolution.
@@ -142,14 +142,14 @@ At a minimum, a lightweight process and an organization-wide schema reuse librar
 
 Governance should ensure consistent exposure of resources with respect to representations and semantics.
 
-#### API Management
+# API Management
 At the highest level, an API management solution needs to include a –
 
 * Developer Portal for developers to discover APIs, understand usage and sign up for access
 * API Gateway that secures and mediates the traffic between your APIs and its consumers
 * API Lifecycle Management to manage the process of designing, developing, deploying, versioning and retiring APIs
 
-#### Automated Testing
+# Automated Testing
 IN PROGRESS
 
 ### References
