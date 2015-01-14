@@ -9,17 +9,17 @@ As per Wikipedia: An Application Programming Interface (API) is a specification 
 [REST is a set of principles] (http://www.infoq.com/articles/rest-introduction) that define how Web standards, such as HTTP and URIs, are supposed to be used (which often differs quite a bit from what many people actually do). REST stands for Representational State Transfer, and was first described in chapter 5 of [Roy Fielding's Ph.D dissertation] (http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm).
 
 #### [REST Architectural Constraints] (http://en.wikipedia.org/wiki/Representational_state_transfer#Constraints) defined by Wikipedia
-####### * Client-Server
-####### * Stateless
-####### * Cacheable
-####### * Layered System
-####### * Uniform Interface
+###### * Client-Server
+###### * Stateless
+###### * Cacheable
+###### * Layered System
+###### * Uniform Interface
 
 #### REST principles adopted by RESTful APIs.
-###### Expose 'Resources' to represent important concepts and objects
-###### Ensure each resource is uniquely 'addressable' via a URI, so that clients may interact with them over HTTP
-###### Provide 'representations' (e.g., using JSON and or XML) of those resources
-###### Provide a consistent interface based upon the standard HTTP methods
+###### * Expose 'Resources' to represent important concepts and objects
+###### * Ensure each resource is uniquely 'addressable' via a URI, so that clients may interact with them over HTTP
+###### * Provide 'representations' (e.g., using JSON and or XML) of those resources
+###### * Provide a consistent interface based upon the standard HTTP methods
 ###### Ensure interaction with the API is stateless in nature, in order to provide flexibility in deployment as well as to promote scalability
 
 # RESTful vs REST
@@ -28,11 +28,11 @@ The difference between REST and RESTful is simply semantics. REST is an architec
 Martin Fowler authored a very nice overview of the [Richardson Maturity Model] (http://martinfowler.com/articles/richardsonMaturityModel.html) used for gauging an API's 'level of RESTfulness'. This seems to be the most popular maturity model for REST.
 
 # What makes a good RESTful API
-###### Follows Robustness principle which says “Follow a general principle of robustness: be conservative in what you do, be liberal in what you accept from others."
-###### An API is a developer's UI - just like any UI, it's important to ensure the user's experience is thought out carefully!     
-###### An API is only as good as its documentation. The documents should be easy to find and publically accessible.
-###### Provides support for backward compatibility and or versioning
-###### Does not expose internal domain object structures or database entity as resource representations
+###### * Follows Robustness principle which says “Follow a general principle of robustness: be conservative in what you do, be liberal in what you accept from others."
+###### * An API is a developer's UI - just like any UI, it's important to ensure the user's experience is thought out carefully!     
+###### * An API is only as good as its documentation. The documents should be easy to find and publically accessible.
+###### * Provides support for backward compatibility and or versioning
+###### * Does not expose internal domain object structures or database entity as resource representations
 
 # API Design Guidelines
 
@@ -56,12 +56,12 @@ Just like an HTML error page shows a useful error message to a visitor, an API s
 
 #### Use Common URI Conventions
 With respect to URIs, RESTful APIs should:
-###### Use transparent (readable) URIs unless specific requirements preclude
-###### Use dashes (aka hyphens) in lieu of underscores (when easily supported by your framework)
-###### Use dashes (aka hyphens) in lieu of camel case. (This is proposed only for API URLs, and only if supported by your framework.)
-###### Support nested resources when doing so is logical and only two levels deep
-###### The use of plural resource names is preferred, but not required. For example, it is proposed to use 'colleges' versus 'college' for URLs used to refer to both collections and specific elements within a collection. Using singular naming is not incorrect, but using plural naming is also common and may arguably read better.
-###### Representations for a collection and a single instance of a resource are to be considered the same resource from an addressing perspective. That is, a list of colleges may be referenced as /colleges, a specific college instance may be referenced using a URI such as '/colleges/college-43'.
+###### * Use transparent (readable) URIs unless specific requirements preclude
+###### * Use dashes (aka hyphens) in lieu of underscores (when easily supported by your framework)
+###### * Use dashes (aka hyphens) in lieu of camel case. (This is proposed only for API URLs, and only if supported by your framework.)
+###### * Support nested resources when doing so is logical and only two levels deep
+###### * The use of plural resource names is preferred, but not required. For example, it is proposed to use 'colleges' versus 'college' for URLs used to refer to both collections and specific elements within a collection. Using singular naming is not incorrect, but using plural naming is also common and may arguably read better.
+###### * Representations for a collection and a single instance of a resource are to be considered the same resource from an addressing perspective. That is, a list of colleges may be referenced as /colleges, a specific college instance may be referenced using a URI such as '/colleges/college-43'.
 
 #### API Documentation
 An API is only as good as its documentation. The docs should be easy to find and publically accessible. The docs should show examples of complete request/response cycles.
@@ -70,37 +70,37 @@ An API is only as good as its documentation. The docs should be easy to find and
 #### Use Standard HTTP Methods
 APIs should at a minimum expose a standard REST interface using the four HTTP methods (aka verbs) shown below:
 
-###### GET		Read a resource or list of resources
-###### POST	Create a new resource (when the key is not known a-priori)
-###### PUT		Update an existing resource or create one if the key is pre-defined
-###### DELETE	Remove a resource
+###### * GET		Read a resource or list of resources
+###### * POST	Create a new resource (when the key is not known a-priori)
+###### * PUT		Update an existing resource or create one if the key is pre-defined
+###### * DELETE	Remove a resource
 
 #### Use Standard HTTP Status Codes
 RESTful APIs should be designed to use standard HTTP status codes. The following status codes are recommended:
 
-###### 200	The request was successful.
-###### 201	A resource was successfully created.
-###### 202	Request has been received. This is only used for asynchronous processing.
-###### 304	The GET request was conditional and contained an 'If-None-Match' header that was used to determine the current representation has not changed
-###### 400	The request cannot be understood. This should be used if there are syntax errors and validation errors, (422 is also acceptable for validation errors.)
-###### 401	Authentication has failed, or the authenticated client is not authorized.
-###### 404	The requested resource could not be found.
-###### 405	The method is not supported by the resource.
-###### 406	Not Acceptable. Return this code when the Accept header (or a custom header as discussed in this strategy) identifies an unsupported format.
-###### 409	There is a conflict. Return this if the request reflects stale data (that violates an optimistic lock).
-###### 412	A precondition failed. Used for conditional requests (e.g., when an 'If-Match' header does not match a resource's Etag value).
-###### 415	Unsupported Media Type. Return when a client requests content in an unsupported format.
-###### 417	Expectation Failed. Return this if appropriate when supporting 'look-before-you-leap' requests
-###### 422	'Unprocessable' entity. See note below.
-###### 429	The rate limit is exceeded
-###### 500	An undisclosed server error occurred. This is a generic 'fail whale' response.
+###### * 200	The request was successful.
+###### * 201	A resource was successfully created.
+###### * 202	Request has been received. This is only used for asynchronous processing.
+###### * 304	The GET request was conditional and contained an 'If-None-Match' header that was used to determine the current representation has not changed
+###### * 400	The request cannot be understood. This should be used if there are syntax errors and validation errors, (422 is also acceptable for validation errors.)
+###### * 401	Authentication has failed, or the authenticated client is not authorized.
+###### * 404	The requested resource could not be found.
+###### * 405	The method is not supported by the resource.
+###### * 406	Not Acceptable. Return this code when the Accept header (or a custom header as discussed in this strategy) identifies an unsupported format.
+###### * 409	There is a conflict. Return this if the request reflects stale data (that violates an optimistic lock).
+###### * 412	A precondition failed. Used for conditional requests (e.g., when an 'If-Match' header does not match a resource's Etag value).
+###### * 415	Unsupported Media Type. Return when a client requests content in an unsupported format.
+###### * 417	Expectation Failed. Return this if appropriate when supporting 'look-before-you-leap' requests
+###### * 422	'Unprocessable' entity. See note below.
+###### * 429	The rate limit is exceeded
+###### * 500	An undisclosed server error occurred. This is a generic 'fail whale' response.
 
 #### Use API versioning
 It is important to version APIs in order to provide clients with stability. Versioning helps you iterate faster and prevents invalid requests from hitting updated endpoints. There are several common approaches used across the industry today for versioning RESTful APIs, the most common being to specify a version:
 
-###### within the URL
-###### using a query parameter
-###### using a custom media type identified in the Accept and Content-Type headers
+###### * within the URL
+###### * using a query parameter
+###### * using a custom media type identified in the Accept and Content-Type headers
 
 RESTful APIs should use custom media types (previously known as 'MIME types') to allow client applications the ability to interact with a stable, versioned API when desired.
 
