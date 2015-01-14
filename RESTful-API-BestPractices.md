@@ -15,7 +15,7 @@ This post is not an invention, but is a gathering of best practices and insights
 * Layered System
 * Uniform Interface
 
-#### REST principles adopted by RESTful APIs.
+#### REST principles adopted by RESTful APIs
 * Expose 'Resources' to represent important concepts and objects
 * Ensure each resource is uniquely 'addressable' via a URI, so that clients may interact with them over HTTP
 * Provide 'representations' (e.g., using JSON and or XML) of those resources
@@ -92,7 +92,7 @@ DELETE | Remove a resource
 #### Use Standard HTTP Status Codes
 RESTful APIs should be designed to use standard HTTP status codes. The following status codes are recommended:
 
-HTTP Status Code  | Description
+Status Code  | Description
 ------------- | -------------
 200 | The request was successful.
 201 | A resource was successfully created.
