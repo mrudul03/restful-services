@@ -42,6 +42,15 @@ It is very important to select the right resources and model the resources at th
 
 Identifying the resources to expose, and the content of those resources, is an iterative process and requires feedback. It is also important not to allow one client to drive the API design at the expense of other clients (if they are also known), or to deviate from common API practices or this strategy. APIs are basically a "business layer" or middleware application tier. APIs should either encapsulate business operations or, in the ever-more-popular REST style, application resources.
 
+#### Use a Consistent Representation
+Defining representations includes selection of the properties to be expressed, selecting appropriate attribute and element names, defining the structure (including hierarchical structures. Mike Amundsen identifies three primary styles for representing domains: 'domain-specific', 'general', and 'agnostic'.
+
+Domain Style  | Description
+------------- | -------------
+domain-specific  | Closely models the domain with respect to element names and structure. Example element: "auto-loan"
+general  | General element names are used whenever possible (and these are then decorated with attributes to provide the specificity). Example element: "loan": {"type":"auto } 
+agnostic | Uses generic element names and relies on attributes to provide context. Example element: "ul": {"type":"auto-loan" }
+
 #### Fine Grained Resources VS Coarse Grained Resources
 If we design the API around fine-grained resources, we would end up with a chattier API for consumer applications. On the other hand, if we design the API based on very coarse-grained resources (designed to do everything) there will not be enough variations to support all the API consumers’ needs and the API may become too difficult to use and maintain.
 
