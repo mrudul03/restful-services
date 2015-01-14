@@ -70,10 +70,12 @@ An API is only as good as its documentation. The docs should be easy to find and
 #### Use Standard HTTP Methods
 APIs should at a minimum expose a standard REST interface using the four HTTP methods (aka verbs) shown below:
 
-###### * GET		Read a resource or list of resources
-###### * POST	Create a new resource (when the key is not known a-priori)
-###### * PUT		Update an existing resource or create one if the key is pre-defined
-###### * DELETE	Remove a resource
+HTTP Method  | Description
+------------- | -------------
+GET  | Read a resource or list of resources
+POST  | Create a new resource 
+PUT | Update an existing resource or create one if the key is pre-defined
+DELETE | Remove a resource
 
 #### Use Standard HTTP Status Codes
 RESTful APIs should be designed to use standard HTTP status codes. The following status codes are recommended:
