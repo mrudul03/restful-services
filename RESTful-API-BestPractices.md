@@ -29,8 +29,8 @@ Martin Fowler authored a very nice overview of the [Richardson Maturity Model] (
 
 # What makes a good RESTful API
 * Follows Robustness principle which says “Follow a general principle of robustness: be conservative in what you do, be liberal in what you accept from others."
-* An API is a developer's UI - just like any UI, it's important to ensure the user's experience is thought out carefully!
-* An API is only as good as its documentation. The documents should be easy to find and publically accessible.
+* An API is a developer's UI - just like any UI, it's important to ensure the user's experience is thought out carefully
+* An API is only as good as its documentation. The documents should be easy to find and publically accessible
 * Provides support for backward compatibility or versioning
 * Does not expose internal domain object structures or database entity as resource representations
 
@@ -57,7 +57,7 @@ If we design the API around fine-grained resources, we would end up with a chatt
 
 There may be situations where an API that is built around low-level resources may just be fine. For example, to get bank account balance information, an API that is built around “Account” resource is good enough. On the other hand, if the need is to do a money transfer or to get a bank statement, the API needs to be built around the coarse-grained “Transactions” resource. Service designer should consider the nature of the client-service interactions imposed by the contract to design the APIs as fine-grained or coarse-grained.
 
-#### Updates & creation should return a resource representation
+#### Return a resource representation for Creation and Updates
 A PUT, POST or PATCH call may make modifications to fields of the underlying resource that weren't part of the provided parameters (for example: created_at or updated_at timestamps). To prevent an API consumer from having to hit the API again for an updated representation, have the API return the updated (or created) representation as part of the response.
 
 #### Define a consumable error payload
