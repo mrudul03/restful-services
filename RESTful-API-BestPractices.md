@@ -31,7 +31,7 @@ Martin Fowler authored a very nice overview of the [Richardson Maturity Model] (
 * Follows Robustness principle which says “Follow a general principle of robustness: be conservative in what you do, be liberal in what you accept from others."
 * An API is a developer's UI - just like any UI, it's important to ensure the user's experience is thought out carefully!
 * An API is only as good as its documentation. The documents should be easy to find and publically accessible.
-* Provides support for backward compatibility and or versioning
+* Provides support for backward compatibility or versioning
 * Does not expose internal domain object structures or database entity as resource representations
 
 # API Design Guidelines
