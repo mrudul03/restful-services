@@ -16,11 +16,11 @@ This post is not an invention, but is a gathering of best practices and insights
 * Uniform Interface
 
 #### REST principles adopted by RESTful APIs.
-###### * Expose 'Resources' to represent important concepts and objects
-###### * Ensure each resource is uniquely 'addressable' via a URI, so that clients may interact with them over HTTP
-###### * Provide 'representations' (e.g., using JSON and or XML) of those resources
-###### * Provide a consistent interface based upon the standard HTTP methods
-###### Ensure interaction with the API is stateless in nature, in order to provide flexibility in deployment as well as to promote scalability
+* Expose 'Resources' to represent important concepts and objects
+* Ensure each resource is uniquely 'addressable' via a URI, so that clients may interact with them over HTTP
+* Provide 'representations' (e.g., using JSON and or XML) of those resources
+* Provide a consistent interface based upon the standard HTTP methods
+* Ensure interaction with the API is stateless in nature, in order to provide flexibility in deployment as well as to promote scalability
 
 # RESTful vs REST
 The difference between REST and RESTful is simply semantics. REST is an architectural style applied to a client-server relationship. RESTful is simply a way of telling your clients that you use REST. RESTful API should conform to REST constraints defined above.
@@ -28,11 +28,10 @@ The difference between REST and RESTful is simply semantics. REST is an architec
 Martin Fowler authored a very nice overview of the [Richardson Maturity Model] (http://martinfowler.com/articles/richardsonMaturityModel.html) used for gauging an API's 'level of RESTfulness'. This seems to be the most popular maturity model for REST.
 
 # What makes a good RESTful API
-###### * Follows Robustness principle which says “Follow a general principle of robustness: be conservative in what you do, be liberal in what you accept from others."
-###### * An API is a developer's UI - just like any UI, it's important to ensure the user's experience is thought out carefully!     
-###### * An API is only as good as its documentation. The documents should be easy to find and publically accessible.
-###### * Provides support for backward compatibility and or versioning
-###### * Does not expose internal domain object structures or database entity as resource representations
+* Follows Robustness principle which says “Follow a general principle of robustness: be conservative in what you do, be liberal in what you accept from others."
+* An API is a developer's UI - just like any UI, it's important to ensure the user's experience is thought out carefully!   * An API is only as good as its documentation. The documents should be easy to find and publically accessible.
+* Provides support for backward compatibility and or versioning
+* Does not expose internal domain object structures or database entity as resource representations
 
 # API Design Guidelines
 
@@ -56,12 +55,12 @@ Just like an HTML error page shows a useful error message to a visitor, an API s
 
 #### Use Common URI Conventions
 With respect to URIs, RESTful APIs should:
-###### * Use transparent (readable) URIs unless specific requirements preclude
-###### * Use dashes (aka hyphens) in lieu of underscores (when easily supported by your framework)
-###### * Use dashes (aka hyphens) in lieu of camel case. (This is proposed only for API URLs, and only if supported by your framework.)
-###### * Support nested resources when doing so is logical and only two levels deep
-###### * The use of plural resource names is preferred, but not required. For example, it is proposed to use 'colleges' versus 'college' for URLs used to refer to both collections and specific elements within a collection. Using singular naming is not incorrect, but using plural naming is also common and may arguably read better.
-###### * Representations for a collection and a single instance of a resource are to be considered the same resource from an addressing perspective. That is, a list of colleges may be referenced as /colleges, a specific college instance may be referenced using a URI such as '/colleges/college-43'.
+* Use transparent (readable) URIs unless specific requirements preclude
+* Use dashes (aka hyphens) in lieu of underscores (when easily supported by your framework)
+* Use dashes (aka hyphens) in lieu of camel case. (This is proposed only for API URLs, and only if supported by your framework.)
+* Support nested resources when doing so is logical and only two levels deep
+* The use of plural resource names is preferred, but not required. For example, it is proposed to use 'colleges' versus 'college' for URLs used to refer to both collections and specific elements within a collection. Using singular naming is not incorrect, but using plural naming is also common and may arguably read better.
+* Representations for a collection and a single instance of a resource are to be considered the same resource from an addressing perspective. That is, a list of colleges may be referenced as /colleges, a specific college instance may be referenced using a URI such as '/colleges/college-43'.
 
 #### API Documentation
 An API is only as good as its documentation. The docs should be easy to find and publically accessible. The docs should show examples of complete request/response cycles.
@@ -103,9 +102,9 @@ HTTP Method  | Description
 #### Use API versioning
 It is important to version APIs in order to provide clients with stability. Versioning helps you iterate faster and prevents invalid requests from hitting updated endpoints. There are several common approaches used across the industry today for versioning RESTful APIs, the most common being to specify a version:
 
-###### * within the URL
-###### * using a query parameter
-###### * using a custom media type identified in the Accept and Content-Type headers
+* within the URL
+* using a query parameter
+* using a custom media type identified in the Accept and Content-Type headers
 
 RESTful APIs should use custom media types (previously known as 'MIME types') to allow client applications the ability to interact with a stable, versioned API when desired.
 
@@ -114,11 +113,11 @@ When returning collections, it may be necessary to support paging. There is no s
 
 #### Understand Common REST Design Patterns
 
-###### Asynchronous Processing with REST Asynchronous processing may be supported by having an endpoint perform work asynchronously, and immediately return a '202' status code with a link that the caller may subsequently use to check the status of the asynchronous process.
+* Asynchronous Processing with REST Asynchronous processing may be supported by having an endpoint perform work asynchronously, and immediately return a '202' status code with a link that the caller may subsequently use to check the status of the asynchronous process.
 
-###### Business Transactions with REST SOAP allows for externalization of business transactions using WS-BusinessActivity. Business (aka logical) transactions may be modeled explicitly as a resource, so that a business transaction can be started using a POST, status updated using PUT, and committed using PUT and or DELETE. 
+* Business Transactions with REST SOAP allows for externalization of business transactions using WS-BusinessActivity. Business (aka logical) transactions may be modeled explicitly as a resource, so that a business transaction can be started using a POST, status updated using PUT, and committed using PUT and or DELETE. 
 
-###### Reliable Messaging with REST While REST does not have built-in 'reliable messaging' support, it uses synchronous communication over the HTTP protocol and can thus recover more safely from potentially lost messages.
+* Reliable Messaging with REST While REST does not have built-in 'reliable messaging' support, it uses synchronous communication over the HTTP protocol and can thus recover more safely from potentially lost messages.
 
 #### Governance
 Governance is a broad area that may encompass service registries, service repositories, schema catalogs, server configurations, service management (consumption, usage patterns, etc.), and even development processes.
@@ -132,9 +131,9 @@ Governance should ensure consistent exposure of resources with respect to repres
 #### API Management
 At the highest level, an API management solution needs to include a –
 
-###### Developer Portal for developers to discover APIs, understand usage and sign up for access
-###### API Gateway that secures and mediates the traffic between your APIs and its consumers
-###### API Lifecycle Management to manage the process of designing, developing, deploying, versioning and retiring APIs
+* Developer Portal for developers to discover APIs, understand usage and sign up for access
+* API Gateway that secures and mediates the traffic between your APIs and its consumers
+* API Lifecycle Management to manage the process of designing, developing, deploying, versioning and retiring APIs
 
 #### Automated Testing
 IN PROGRESS
