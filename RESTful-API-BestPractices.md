@@ -9,11 +9,11 @@ This post is not an invention, but is a gathering of best practices and insights
 [REST is a set of principles] (http://www.infoq.com/articles/rest-introduction) that define how Web standards, such as HTTP and URIs, are supposed to be used (which often differs quite a bit from what many people actually do). REST stands for Representational State Transfer, and was first described in chapter 5 of [Roy Fielding's Ph.D dissertation] (http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm).
 
 #### [REST Architectural Constraints] (http://en.wikipedia.org/wiki/Representational_state_transfer#Constraints) defined by Wikipedia
-* Client-Server
-* Stateless
-* Cacheable
-* Layered System
-* Uniform Interface
+* Uniform Interface: The uniform interface constraint defines the interface between clients and servers. It simplifies and decouples the architecture, which enables each part to evolve independently.
+* Stateless: This means is that the necessary state to handle the request is contained within the request itself, whether as part of the URI, query-string parameters, body, or headers
+* Cacheable: Responses must implicitly or explicitly, define themselves as cacheable, or not, to prevent clients reusing stale or inappropriate data in response to further requests.
+* * Client-Server: The uniform interface separates clients from servers.
+* Layered System: A client cannot ordinarily tell whether it is connected directly to the end server, or to an intermediary along the way.
 
 #### REST principles adopted by RESTful APIs
 * Expose 'Resources' to represent important concepts and objects
@@ -66,6 +66,8 @@ Just like an HTML error page shows a useful error message to a visitor, an API s
 #### Consider Connectedness
 One of the principles of REST is connectedness—via hypermedia links. While services are still useful without them, APIs become more self-descriptive when links are returned in the response. At the very least, a 'self' reference informs clients how the data was or can be retrieved. Additionally, utilize the Location header to contain a link on resource creation via POST. For collections returned in a response that support pagination, 'first', 'last', 'next' and 'prev' links at a minimum are very helpful.
 
+#### Embrace Concurrency
+Server-side concurrency is needed to effectively reduce network chattiness. Without concurrent execution on the server, a single "heavy" client request might not be much better than many "light" requests because each network request from a device naturally executes in parallel with other network requests. If the server-side execution of a collapsed "heavy" request does not achieve a similar level of parallel execution it may be slower than the multiple "light" requests even accounting for saved network latency
 
 #### Use Common URI Conventions
 With respect to URIs, RESTful APIs should:
