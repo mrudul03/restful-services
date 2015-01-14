@@ -127,9 +127,9 @@ Governance should ensure consistent exposure of resources with respect to repres
 #### API Management
 At the highest level, an API management solution needs to include a –
 
-##### Developer Portal for developers to discover APIs, understand usage and sign up for access
-##### API Gateway that secures and mediates the traffic between your APIs and its consumers
-##### API Lifecycle Management to manage the process of designing, developing, deploying, versioning and retiring APIs
+###### Developer Portal for developers to discover APIs, understand usage and sign up for access
+###### API Gateway that secures and mediates the traffic between your APIs and its consumers
+###### API Lifecycle Management to manage the process of designing, developing, deploying, versioning and retiring APIs
 
 #### Automated Testing
 IN PROGRESS
