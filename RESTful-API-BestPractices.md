@@ -53,6 +53,10 @@ A PUT, POST or PATCH call may make modifications to fields of the underlying res
 #### Define a consumable error payload
 Just like an HTML error page shows a useful error message to a visitor, an API should provide a useful error message in a known consumable format. The representation of an error should be no different than the representation of any resource, just with its own set of fields.
 
+#### Consider Connectedness
+One of the principles of REST is connectedness—via hypermedia links. While services are still useful without them, APIs become more self-descriptive when links are returned in the response. At the very least, a 'self' reference informs clients how the data was or can be retrieved. Additionally, utilize the Location header to contain a link on resource creation via POST. For collections returned in a response that support pagination, 'first', 'last', 'next' and 'prev' links at a minimum are very helpful.
+
+
 #### Use Common URI Conventions
 With respect to URIs, RESTful APIs should:
 * Use transparent (readable) URIs unless specific requirements preclude
