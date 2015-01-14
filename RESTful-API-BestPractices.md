@@ -79,7 +79,7 @@ DELETE | Remove a resource
 #### Use Standard HTTP Status Codes
 RESTful APIs should be designed to use standard HTTP status codes. The following status codes are recommended:
 
-HTTP Method  | Description
+HTTP Status Code  | Description
 ------------- | -------------
 200 | The request was successful.
 201 | A resource was successfully created.
