@@ -12,7 +12,7 @@ This post is not an invention, but is a gathering of best practices and insights
 * Uniform Interface: The uniform interface constraint defines the interface between clients and servers. It simplifies and decouples the architecture, which enables each part to evolve independently.
 * Stateless: This means is that the necessary state to handle the request is contained within the request itself, whether as part of the URI, query-string parameters, body, or headers
 * Cacheable: Responses must implicitly or explicitly, define themselves as cacheable, or not, to prevent clients reusing stale or inappropriate data in response to further requests.
-* * Client-Server: The uniform interface separates clients from servers.
+* Client-Server: The uniform interface separates clients from servers.
 * Layered System: A client cannot ordinarily tell whether it is connected directly to the end server, or to an intermediary along the way.
 
 #### REST principles adopted by RESTful APIs
