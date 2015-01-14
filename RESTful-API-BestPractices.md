@@ -115,8 +115,21 @@ When returning collections, it may be necessary to support paging. There is no s
 
 ###### Reliable Messaging with REST While REST does not have built-in 'reliable messaging' support, it uses synchronous communication over the HTTP protocol and can thus recover more safely from potentially lost messages.
 
-#### API Management (Governance)
-IN PROGRESS
+#### Governance
+Governance is a broad area that may encompass service registries, service repositories, schema catalogs, server configurations, service management (consumption, usage patterns, etc.), and even development processes.
+
+Service repositories are used to centrally store information about the services that are present in your organization's service inventory whereas service registries are often used at runtime to help with problems like endpoint resolution.
+
+At a minimum, a lightweight process and an organization-wide schema reuse library, data dictionary, or repository is needed to promote commonality across an organization creating APIs. One can also build their own [simple service repository] (http://www.infoq.com/articles/SimpleServiceRepository) or use tools such as [IgniteXML] (http://www.digitalml.com/).
+
+Governance should ensure consistent exposure of resources with respect to representations and semantics.
+
+#### API Management
+At the highest level, an API management solution needs to include a –
+
+##### Developer Portal for developers to discover APIs, understand usage and sign up for access
+##### API Gateway that secures and mediates the traffic between your APIs and its consumers
+##### API Lifecycle Management to manage the process of designing, developing, deploying, versioning and retiring APIs
 
 #### Automated Testing
 IN PROGRESS
@@ -126,8 +139,3 @@ IN PROGRESS
 2.	http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm 
 3.	http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api
 4.	http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm
-
-
-
-
-
