@@ -9,11 +9,11 @@ As per Wikipedia: An Application Programming Interface (API) is a specification 
 [REST is a set of principles] (http://www.infoq.com/articles/rest-introduction) that define how Web standards, such as HTTP and URIs, are supposed to be used (which often differs quite a bit from what many people actually do). REST stands for Representational State Transfer, and was first described in chapter 5 of [Roy Fielding's Ph.D dissertation] (http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm).
 
 #### [REST Architectural Constraints] (http://en.wikipedia.org/wiki/Representational_state_transfer#Constraints) defined by Wikipedia
-###### * Client-Server
-###### * Stateless
-###### * Cacheable
-###### * Layered System
-###### * Uniform Interface
+####### * Client-Server
+####### * Stateless
+####### * Cacheable
+####### * Layered System
+####### * Uniform Interface
 
 #### REST principles adopted by RESTful APIs.
 ###### Expose 'Resources' to represent important concepts and objects
