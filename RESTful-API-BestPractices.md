@@ -9,11 +9,12 @@ This post is not an invention, but is a gathering of best practices and insights
 [REST is a set of principles] (http://www.infoq.com/articles/rest-introduction) that define how Web standards, such as HTTP and URIs, are supposed to be used (which often differs quite a bit from what many people actually do). REST stands for Representational State Transfer, and was first described in chapter 5 of [Roy Fielding's Ph.D dissertation] (http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm).
 
 #### [REST Architectural Constraints] (http://en.wikipedia.org/wiki/Representational_state_transfer#Constraints) defined by Wikipedia
-* Uniform Interface: The uniform interface constraint defines the interface between clients and servers. It simplifies and decouples the architecture, which enables each part to evolve independently.
+* Client-Server: A uniform interface separates clients from servers. This separation of concerns means that, for example, clients are not concerned with data storage, which remains internal to each server, so that the portability of client code is improved. Servers are not concerned with the user interface or user state, so that servers can be simpler and more scalable
 * Stateless: This means is that the necessary state to handle the request is contained within the request itself, whether as part of the URI, query-string parameters, body, or headers
 * Cacheable: Responses must implicitly or explicitly, define themselves as cacheable, or not, to prevent clients reusing stale or inappropriate data in response to further requests.
-* Client-Server: The uniform interface separates clients from servers.
 * Layered System: A client cannot ordinarily tell whether it is connected directly to the end server, or to an intermediary along the way.
+* Uniform Interface: The uniform interface constraint defines the interface between clients and servers. It simplifies and decouples the architecture, which enables each part to evolve independently.
+* Code on demand (Optional): Servers can temporarily extend or customize the functionality of a client by the transfer of executable code. 
 
 #### REST principles adopted by RESTful APIs
 * Expose 'Resources' to represent important concepts and objects
