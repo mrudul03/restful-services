@@ -159,3 +159,4 @@ IN PROGRESS
 2.	http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm 
 3.	http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api
 4.	http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm
+5.	http://martinfowler.com/articles/richardsonMaturityModel.html
