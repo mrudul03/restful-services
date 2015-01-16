@@ -105,14 +105,14 @@ Status Code  | Description
 401 | Authentication has failed, or the authenticated client is not authorized.
 404 | The requested resource could not be found.
 405 | The method is not supported by the resource.
-406 | Not Acceptable. Return this code when the Accept header (or a custom header as discussed in this strategy) identifies an unsupported format.
+406 | Not Acceptable. Return this code when the Accept header identifies an unsupported format.
 409 | There is a conflict. Return this if the request reflects stale data (that violates an optimistic lock).
 412 | A precondition failed. Used for conditional requests (e.g., when an 'If-Match' header does not match a resource's Etag value).
 415 | Unsupported Media Type. Return when a client requests content in an unsupported format.
 417 | Expectation Failed. Return this if appropriate when supporting 'look-before-you-leap' requests.
-422 | Unprocessable entity. See note below.
+422 | Unprocessable entity.
 429 | The rate limit is exceeded.
-500 | An undisclosed server error occurred. This is a generic 'fail whale' response.
+500 | An undisclosed server error occurred.
 
 
 #### Use API versioning
