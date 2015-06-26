@@ -119,11 +119,16 @@ Status Code  | Description
 #### Use API versioning
 It is important to version APIs in order to provide clients with stability. Versioning helps you iterate faster and prevents invalid requests from hitting updated endpoints. There are several common approaches used across the industry today for versioning RESTful APIs, the most common being to specify a version:
 
-* within the URL
-* using a query parameter
-* using a custom media type identified in the Accept and Content-Type headers
+* within the URL: /loans/home-loans/accounts/v1/{1234234}/ or /loans/home-loans/accounts/v2/{1234234}/transactions/v2/
 
-RESTful APIs should use custom media types (previously known as 'MIME types') to allow client applications the ability to interact with a stable, versioned API when desired.
+* using a query parameter: /loans/home-loans/accounts/{1234234}?version=1
+
+* using a custom media type identified in the Accept and Content-Type headers: Accept: application/loans.homeloans.account+json;v=2
+
+RESTful APIs should use custom media types (previously known as 'MIME types') to allow client applications the ability to interact with a stable, versioned API when desired. With this approach resource representations transferred to the client is versioned. The advantage of this approach is that each resource is versioned independently and incremented individually.
+
+Embedding of API version into the URI disrupts the concept of uniform interface (REST guideline) by having a resource URI that would change over time.
+
 
 #### Support Pagination
 When returning collections, it may be necessary to support paging. There is no single standard for paging, however 'page' and 'per-page' are recommended, the specific query parameter names may differ based upon your framework.
